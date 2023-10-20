@@ -1,0 +1,23 @@
+<b>Enter user's data</b><br>
+<form #userData="ngForm" (ngSubmit) ='addUser(userData)' >
+First Name <input type="text" name="uid" ngModel /><br>
+Last Name <input type="text" name="emailid" ngModel /><br>
+Join Date <input type="date" name="password" ngModel /><br>
+Salary  <input type="number" name="salary" ngModel /><br>
+<input type="submit" value="Add User" />
+</form>
+<table style="border-style: dotted;text-align: center;">
+  <tr><td colspan="4" style="text-align: center;"><b>List of Users</b></td></tr>
+  <tr><td>FirstName</td>
+    <td>LastName</td>
+    <td>Join Date</td>
+    <td>Salary</td>
+  </tr>
+  <tr *ngFor="let user of userList">
+    <td>{{user.uid}}&nbsp;&nbsp;</td>
+    <td>{{user.emailid}}</td>
+    <td>{{user.password}}</td>
+    <td>{{user.salary}}</td>
+  </tr>
+  </table>
+<router-outlet></router-outlet>
