@@ -1,0 +1,26 @@
+<a routerLink="/login">Login</a>&nbsp;&nbsp;
+<a routerLink="/aboutus">About Us</a>&nbsp;&nbsp;
+<a routerLink="/contactus">Contact Us</a>&nbsp;&nbsp;
+
+<br><b>Enter user's data</b><br>
+<form #userData="ngForm" (ngSubmit) ='addUsers(userData)' >
+UserId <input type="text" name="userid" ngModel /><br>
+EmailId <input type="text" name="emailid" ngModel /><br>
+Password <input type="text" name="password" ngModel /><br>
+<input type="submit" value="Add User" />&nbsp;&nbsp;
+<input type="button" value="Get User" (click)="getAllUsers()"/>
+</form>
+<br><label>{{this.expresponse}}</label><br><br>
+<table style="border-style: dotted;text-align: center;">
+  <tr><td colspan="4" style="text-align: center;"><b>List of Users</b></td></tr>
+  <tr><td>UserId</td>
+    <td>EmailId</td>
+    <td>Password</td>
+  </tr>
+  <tr *ngFor="let user of userList">
+    <td>{{user.userid}}&nbsp;&nbsp;</td>
+    <td>{{user.emailid}}</td>
+    <td>{{user.password}}</td>
+  </tr>
+  </table>
+  

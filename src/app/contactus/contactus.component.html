@@ -1,0 +1,29 @@
+<a routerLink="/home"><img src="assets\images\home.jpg" width="40px" height ="40px" /></a>&nbsp;&nbsp;
+<form [formGroup] ="userForm" (ngSubmit) ='addUser(userForm)' >
+    First Name <input type="text" name="firstName" formControlName="firstName"/><br><br>
+    Last Name <input type="text" name="lastName" formControlName="lastName"/><br><br>
+    EmailId <input type="text" name="emailid" formControlName="emailid"/><br><br>
+    Address <input type="text" name="address" formControlName="address"/><br><br>
+    Phone Number  <input type="number" name="phoneno" formControlName="phoneno"/><br><br>
+    <input type="submit" value="Add User" />&nbsp;&nbsp;
+    <input type="button" value="Get User" (click)="getAllUser()"/>
+   
+    </form>
+    <table style="border-style: dotted;text-align: center;">
+      <tr><td colspan="4" style="text-align: center;"><b>List of Users</b></td></tr>
+      <tr><td>First Name</td>
+        <td>Last Name</td>
+        <td>Email Id</td>
+        <td>Address</td>
+        <td>Phone Number</td>
+      </tr>
+      <tr *ngFor="let user of userList">
+        <td>{{user.firstName}}&nbsp;&nbsp;</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.emailid}}</td>
+        <td>{{user.address}}</td>
+        <td>{{user.phoneno}}</td>
+    
+      </tr>
+      </table>
+    <router-outlet></router-outlet>

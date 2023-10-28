@@ -1,0 +1,12 @@
+
+<b>Enter your login details</b><br/>
+<form #loginData="ngForm" (ngSubmit)='loginUser(loginData)'>
+  <br><label>{{this.loginResponse}}</label><br><br>
+  Email ID <input type="text" name="emailid" ngModel required /><br />
+  Password <input type="password" name="password" ngModel required /><br />
+  <input type="submit" value="Login"/><br>
+</form>
+<nav>
+  <a routerLink="/aboutus">About us</a>&nbsp;&nbsp;
+  <a routerLink="/contactus">Contact us</a>&nbsp;&nbsp;
+</nav>
